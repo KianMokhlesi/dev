@@ -11,10 +11,12 @@ import MapKit
 import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
-
+    
     @IBOutlet weak var mapView: MKMapView!
     let locatonManager = CLLocationManager()
     var region = MKCoordinateRegion()
+    var mapItems = [MKMapItem]()
+    var selectedMapItem = MKMapItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         locatonManager.startUpdatingLocation()
         mapView.delegate = self
     }
-
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.first!
         let center = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
@@ -45,6 +47,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                     annotation.coordinate = mapItem.placemark.coordinate
                     annotation.title = mapItem.name
                     self.mapView.addAnnotation(annotation)
+                    self.mapItems.append(mapItem)
                 }
             }
         }
@@ -66,8 +69,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     func mapView(_ mapView: MKMapView, annotationView vew: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        performSegue(withIdentifier: "ShowLocationDetailSegue", sender: nil) //should be able to click on the blue i and be taked w a segue
+        performSegue(withIdentifier: "ShowLocationDetailsSegue", sender: nil) //should be able to click on the blue i and be taked w a segue
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        for mapItem in mapItems {
+            if mapItem.placemark.coordinate.latitude == view.annotation?.coordinate.latitude &&
+                mapItem.placemark.coordinate.longitude == view.annotation?.coordinate.longitude {
+                selectedMapItem = mapItem
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? LocationDetailsViewController {
+            destination.selectedMapItem = selectedMapItem // passing selected map item to next VC
+        }
     }
 }
+
 
 
