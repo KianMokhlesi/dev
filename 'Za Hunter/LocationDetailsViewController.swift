@@ -13,6 +13,10 @@ class LocationDetailsViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
+    @IBAction func onDirectionsButtonTapped(_ sender: Any) {
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
+        MKMapItem.openMaps(with: [selectedMapItem], launchOptions: launchOptions)
+    }
     var selectedMapItem = MKMapItem() //pass to this VC a selected map item
     
     override func viewDidLoad() {
