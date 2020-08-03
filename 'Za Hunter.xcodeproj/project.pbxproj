@@ -13,6 +13,7 @@
 		4C667EC224D85DC50004309C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C667EC024D85DC50004309C /* Main.storyboard */; };
 		4C667EC424D85DC50004309C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C667EC324D85DC50004309C /* Assets.xcassets */; };
 		4C667EC724D85DC50004309C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C667EC524D85DC50004309C /* LaunchScreen.storyboard */; };
+		4C76F55D24D8763900A1C153 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C76F55C24D8763900A1C153 /* LocationDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4C667EC324D85DC50004309C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C667EC624D85DC50004309C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C667EC824D85DC50004309C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C76F55C24D8763900A1C153 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				4C667EBC24D85DC50004309C /* SceneDelegate.swift */,
 				4C667EBE24D85DC50004309C /* ViewController.swift */,
 				4C667EC024D85DC50004309C /* Main.storyboard */,
+				4C76F55C24D8763900A1C153 /* LocationDetailsViewController.swift */,
 				4C667EC324D85DC50004309C /* Assets.xcassets */,
 				4C667EC524D85DC50004309C /* LaunchScreen.storyboard */,
 				4C667EC824D85DC50004309C /* Info.plist */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C76F55D24D8763900A1C153 /* LocationDetailsViewController.swift in Sources */,
 				4C667EBF24D85DC50004309C /* ViewController.swift in Sources */,
 				4C667EBB24D85DC50004309C /* AppDelegate.swift in Sources */,
 				4C667EBD24D85DC50004309C /* SceneDelegate.swift in Sources */,
